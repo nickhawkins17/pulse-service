@@ -1,0 +1,23 @@
+# Production
+fastapi
+alembic
+sqlmodel
+pandas
+psycopg2-binary
+uvicorn
+asyncpg
+greenlet
+python-dotenv
+# Development
+pytest
+pytest-anyio
+pytest-asyncio
+pytest-cov
+httpx
+black
+pylint
+mdformat
+isort
+autoflake
+sqlalchemy-utils
+asgi_lifespan
