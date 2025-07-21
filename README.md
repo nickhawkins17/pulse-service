@@ -2,8 +2,6 @@
 
 The **pulse-service** provides data management and RESTful services for a platform to review Spotify content.
 
-## Table of Contents
-
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [Usage](#usage)
@@ -38,5 +36,22 @@ cp .env_template .env
 ```
 
 ## Usage
+
+### Services
+
+- Start services: `make up`
+- Stop services: `make down`
+
+### Utilities
+
+#### Spotify
+
+- Generate access token: `make token`
+- Get access token: `make get-token`
+- Ingest songs from playlist to local db: `make ingest playlist_id=<Spotify Playlist ID>`
+
+#### Alembic
+
+- Upgrade migrations: `make upgrade-db`
 
 ## References

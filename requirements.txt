@@ -8,6 +8,8 @@ uvicorn
 asyncpg
 greenlet
 python-dotenv
+redis
+requests
 # Development
 pytest
 pytest-anyio
