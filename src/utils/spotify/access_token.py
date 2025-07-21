@@ -1,10 +1,17 @@
 import argparse
+import os
 
 import redis
 import requests
+from dotenv import load_dotenv
 
 # Connect to your local Redis server (adjust host/port if needed)
 r = redis.Redis(host="localhost", port=6379, db=0)
+
+load_dotenv()
+
+SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID")
+SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET")
 
 SPOTIFY_ACCOUNTS_URL = "https://accounts.spotify.com/api/token"
 
@@ -13,8 +20,8 @@ def fetch_and_store_spotify_token():
     # Step 1: Request the token
     payload = {
         "grant_type": "client_credentials",
-        "client_id": "c571f5695cd84827b07ca7aeaeca4b71",
-        "client_secret": "1e761423f89e485a8716b4d2fbf201f8",
+        "client_id": SPOTIFY_CLIENT_ID,
+        "client_secret": SPOTIFY_CLIENT_SECRET,
     }
     headers = {"Content-Type": "application/x-www-form-urlencoded"}
     response = requests.post(SPOTIFY_ACCOUNTS_URL, data=payload, headers=headers)
